@@ -1,0 +1,26 @@
+
+<section class="places-list">
+  <div class="list-header">
+    <h2>Lugares encontrados</h2>
+    <span class="count">{{ places.length }}</span>
+  </div>
+
+  @if (places.length > 0) {
+    @for (place of places; track place.type + '-' + place.id) {
+      <app-place-card
+        [place]="place"
+        [selected]="selectedId === place.id"
+        (placeSelected)="placeSelected.emit($event)"
+      />
+    }
+  } @else {
+    <div class="empty">
+      <span class="empty-icon">🐾</span>
+      <h3>No hay lugares</h3>
+      <p>
+        Prueba con otros filtros o desplaza el mapa
+        a otra zona.
+      </p>
+    </div>
+  }
+</section>

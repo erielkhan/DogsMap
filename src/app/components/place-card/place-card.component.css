@@ -1,0 +1,60 @@
+
+.place-card {
+  padding: 15px;
+  border-bottom: 1px solid #e5e7eb;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.place-card:hover {
+  background: #f8fafc;
+}
+
+.place-card.selected {
+  background: #f0fdf4;
+  border-left: 4px solid #16a34a;
+}
+
+.place-content h3 {
+  margin: 0 0 9px;
+  font-size: 16px;
+}
+
+.dog-label {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.dog-label.yes {
+  color: #166534;
+  background: #dcfce7;
+}
+
+.dog-label.no {
+  color: #991b1b;
+  background: #fee2e2;
+}
+
+.dog-label.outside {
+  color: #92400e;
+  background: #fef3c7;
+}
+
+.hours {
+  margin: 10px 0;
+  color: #475569;
+  font-size: 13px;
+}
+
+.unavailable {
+  color: #94a3b8;
+}
+
+a {
+  color: #15803d;
+  font-size: 12px;
+  text-decoration: none;
+}

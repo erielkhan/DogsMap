@@ -1,0 +1,33 @@
+
+<article
+  class="place-card"
+  [class.selected]="selected"
+  (click)="selectPlace()">
+
+  <div class="place-content">
+    <h3>{{ place.name }}</h3>
+
+    <span class="dog-label" [class]=" 'dog-label ' + place.dog">
+      {{ dogLabel }}
+    </span>
+
+    @if (place.openingHours) {
+      <p class="hours">
+        <span>◷</span>
+        {{ place.openingHours }}
+      </p>
+    } @else {
+      <p class="hours unavailable">
+        Horario no disponible
+      </p>
+    }
+
+    <a
+      [href]="osmUrl"
+      target="_blank"
+      rel="noopener noreferrer"
+      (click)="$event.stopPropagation()">
+      Ver en OpenStreetMap ↗
+    </a>
+  </div>
+</article>

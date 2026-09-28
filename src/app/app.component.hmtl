@@ -1,0 +1,41 @@
+
+<div class="app">
+  <app-header />
+
+  <main class="main-layout">
+    <aside class="sidebar">
+      <app-filters
+        (filtersChange)="onFiltersChange($event)"
+      />
+
+      <div class="results-status">
+        @if (loading) {
+          <span>Cargando lugares...</span>
+        } @else if (error) {
+          <span class="error">{{ error }}</span>
+        } @else {
+          <span>{{ filteredPlaces.length }} lugares</span>
+        }
+      </div>
+
+      <app-places-list
+        [places]="filteredPlaces"
+        [selectedId]="selectedId"
+        (placeSelected)="onPlaceSelected($event)"
+      />
+    </aside>
+
+    <section class="map-panel">
+      <app-map
+        [places]="filteredPlaces"
+        [selectedId]="selectedId"
+        (boundsChange)="onBoundsChange($event)"
+        (placeSelected)="onPlaceSelected($event)"
+      />
+
+      <div class="map-attribution">
+        Datos © OpenStreetMap contributors
+      </div>
+    </section>
+  </main>
+</div>

@@ -1,0 +1,40 @@
+
+.places-list {
+  min-height: 0;
+}
+
+.list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.list-header h2 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.count {
+  padding: 4px 9px;
+  border-radius: 15px;
+  background: #dcfce7;
+  color: #166534;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.empty {
+  padding: 35px 20px;
+  text-align: center;
+  color: #64748b;
+}
+
+.empty-icon {
+  font-size: 35px;
+}
+
+.empty h3 {
+  color: #334155;
+}

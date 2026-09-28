@@ -1,0 +1,44 @@
+
+<section class="filters">
+  <h2>Buscar lugares</h2>
+
+  <input
+    type="search"
+    placeholder="Nombre del lugar..."
+    [(ngModel)]="search"
+    (ngModelChange)="onSearchChange()"
+    class="search-input"
+  />
+
+  <h3>Acceso para perros</h3>
+
+  <label class="filter-option">
+    <input
+      type="checkbox"
+      [checked]="selectedDogs.includes('yes')"
+      (change)="toggleDog('yes', $any($event.target).checked)"
+    />
+    <span class="dot yes"></span>
+    Se permiten perros
+  </label>
+
+  <label class="filter-option">
+    <input
+      type="checkbox"
+      [checked]="selectedDogs.includes('no')"
+      (change)="toggleDog('no', $any($event.target).checked)"
+    />
+    <span class="dot no"></span>
+    No se permiten perros
+  </label>
+
+  <label class="filter-option">
+    <input
+      type="checkbox"
+      [checked]="selectedDogs.includes('outside')"
+      (change)="toggleDog('outside', $any($event.target).checked)"
+    />
+    <span class="dot outside"></span>
+    Solo en el exterior
+  </label>
+</section>
